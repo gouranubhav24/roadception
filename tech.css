@@ -1,0 +1,306 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(90deg, #1f1f1f, #292929);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    padding: 0; /* Remove any padding */
+    display: flex; /* Ensure a flex layout for alignment */
+    align-items: center;
+}
+
+/* Container for Navigation Items */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Make the container span the full width */
+    margin: 0;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0; /* No margin */
+    padding: 0 20px; /* Add some padding for breathing space from the edge */
+}
+
+/* Navigation Links */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px; /* Ensure padding to balance alignment with the logo */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1E90FF;
+    border-bottom: 2px solid #1E90FF;
+}
+
+/* Vision Section */
+.vision {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 3em 1em;
+}
+
+.vision .content h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.vision .content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Tech Stack Section */
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+    padding: 2em;
+}
+
+.tech-card {
+    background: #f3f4f6;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.tech-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.tech-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features-list {
+    list-style: none;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0;
+    text-align: left;
+}
+
+.features-list li {
+    background: #eef2f3;
+    border-left: 4px solid #2575fc;
+    margin-bottom: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    line-height: 1.8;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.features-list li strong {
+    color: #2575fc;
+}
+
+/* Applications Section */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    padding: 2em;
+}
+
+.app-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.app-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.app-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.app-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+footer a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.5em;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2575fc;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .vision .content h2 {
+        font-size: 2em;
+    }
+
+    .vision .content p {
+        font-size: 1em;
+    }
+
+    .tech-stack-container,
+    .applications-grid {
+        flex-direction: column;
+    }
+
+    .features-list li {
+        font-size: 0.9em;
+        padding: 0.8em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 1em;
+    }
+
+    .vision .content h2 {
+        font-size: 1.8em;
+    }
+
+    .vision .content p {
+        font-size: 0.9em;
+    }
+
+    .tech-card h3,
+    .app-card h3 {
+        font-size: 1.3em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 0.6em 1.2em;
+    }
+}
+
+/* Additional Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6a11cb;
+    border-radius: 10px;
+}

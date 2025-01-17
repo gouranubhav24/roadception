@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header.project-header {
+    background: linear-gradient(to right, #1e90ff, #1c1c1c);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header.project-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header.project-header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e90ff;
+    text-align: center;
+}
+
+/* Project Overview */
+.project-overview p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Project Objectives */
+.project-objectives ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-objectives li {
+    background: #f4f4f4;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-left: 5px solid #1e90ff;
+    font-size: 1.1rem;
+}
+
+/* Project Technologies */
+.project-technologies .technologies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-technologies .technology {
+    flex: 1 1 200px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.project-technologies .technology h3 {
+    color: #1e90ff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Project Demo */
+.project-demo video {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-demo p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Conclusion Section */
+.project-conclusion p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Footer */
+footer.project-footer {
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}

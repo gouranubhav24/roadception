@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadception - Autonomous Vehicle Technology</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font for Logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Roadception</div>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tech.html">Our Technology</a></li>
+                <li><a href="project_detail.html">Project Details</a></li>
+        
+            </ul>
+        </div>
+    </nav>
+    
+
+    <!-- Landing Section -->
+    <section id="landing" class="landing">
+        <div class="overlay">
+            <div class="center-logo">
+                <h1>Roadception</h1>
+                <p class="tagline">AI-driven Lane Detection for Autonomous Vehicles</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="demo.html" class="btn demo">Try Demo</a>
+                 
+            </div>
+            <div class="video-info">
+                <h3>Revolutionizing Autonomous Driving</h3>
+                <p>Our technology is designed to make self-driving cars safer and more reliable with real-time lane detection and AI-powered navigation.</p>
+            </div>
+        </div>
+        <!-- Background Video -->
+        <video autoplay muted loop id="bg">
+            <source src="bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-roadception">
+        <h2>About Roadception</h2>
+        <p class="intro">Roadception is an innovative autonomous vehicle project that aims to revolutionize the way we perceive road safety and navigation. We leverage cutting-edge technologies to detect lanes, road conditions, and optimize the driving experience.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Advanced AI</h3>
+                <p>Utilizing deep learning and computer vision, Roadception can understand and predict road patterns with high accuracy.</p>
+            </div>
+            <div class="feature">
+                <h3>Real-time Processing</h3>
+                <p>With real-time data processing, the vehicle can make quick decisions to ensure safe navigation.</p>
+            </div>
+            <div class="feature">
+                <h3>Safety First</h3>
+                <p>Our focus is on maximizing road safety, helping drivers make informed decisions and avoid accidents.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Our Technology Section -->
+    <section class="technology" id="technology">
+        <div class="section-content">
+            <h2>Our Technology: Roadception</h2>
+            <p class="intro">
+                Roadception leverages cutting-edge technologies in computer vision, machine learning, and real-time processing to revolutionize the way vehicles perceive their environment.
+            </p>
+            <div class="tech-features">
+                <div class="feature">
+                    <h3>1. Real-Time Lane Detection</h3>
+                    <p>
+                        By analyzing the road's visual data, Roadception detects lane markings with high precision, even on roads with poor or missing markings. This enables safe navigation on a variety of road types.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>2. Adaptive Object Detection</h3>
+                    <p>
+                        Our system identifies pedestrians, vehicles, and other obstacles in real-time, ensuring enhanced safety in dynamic environments. The adaptive detection model improves accuracy as it learns from new data.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>3. Dynamic Path Prediction</h3>
+                    <p>
+                        The algorithm continuously analyzes the road ahead, predicting the best possible route based on real-time sensor data, traffic conditions, and road type, optimizing the vehicle's navigation.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>4. Deep Learning for Environmental Understanding</h3>
+                    <p>
+                        Through deep neural networks, Roadception analyzes environmental features such as road curvature, lighting conditions, and weather patterns, ensuring reliable performance under varied conditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Subscription Section -->
+    <section id="subscription" class="section">
+        <h2>Subscribe for Updates</h2>
+        <p>Stay updated on the latest innovations and improvements in autonomous driving technology.</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn subscribe">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to get in touch with us!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Roadception | Technology Used: AI, Machine Learning, Computer Vision</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+    <script>
+        // JavaScript to trigger animations when elements come into view
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.about-roadception, .about-roadception h2, .about-roadception .intro, .about-roadception .feature');
+
+    // Create an intersection observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target); // Stop observing once the element is in view
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
+    // Observe the target elements
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+    </script>
+    <script>
+        // JavaScript to trigger animations when elements come into view
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.technology, .technology h2, .technology .intro, .technology .feature');
+
+    // Create an intersection observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target); // Stop observing once the element is in view
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
+    // Observe the target elements
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+    </script>
+</body>
+</html>

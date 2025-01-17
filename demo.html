@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadception - Try Demo</title>
+    <link rel="stylesheet" href="demo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ROADCEPTION</div>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tech.html">Our Technology</a></li>
+                <li><a href="#project-details">Project Details</a></li>
+                <li><a href="#subscription">Subscription</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section">
+        <h2>Try the Demo</h2>
+        <p>Select an option below to test our lane detection system.</p>
+        <div class="demo-options">
+            <button onclick="showFileUpload()" class="btn try-recorded">Try on Recorded Video</button>
+        </div>
+        <div id="file-upload-area" class="file-upload-area" style="display: none; margin-top: 20px;">
+            <p>Upload your video file here:</p>
+            <input type="file" id="videoInput" accept="video/*" />
+            <button onclick="uploadVideo()" class="btn upload-btn">Upload Video</button>
+        </div>
+        <div id="output" class="output-area" style="margin-top: 20px;">
+            <p>Output will appear here...</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Roadception | Technology Used: AI, Machine Learning, Computer Vision</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script>
+        function showFileUpload() {
+            const uploadArea = document.getElementById('file-upload-area');
+            uploadArea.style.display = 'block';
+        }
+
+        async function uploadVideo() {
+            const videoInput = document.getElementById('videoInput');
+            const file = videoInput.files[0];
+            const outputArea = document.getElementById('output');
+
+            if (!file || !file.type.startsWith('video/')) {
+                alert('Please select a valid video file.');
+                return;
+            }
+
+            outputArea.innerHTML = "<p>Processing your video...</p>";
+
+            const formData = new FormData();
+            formData.append('video', file);
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/process-video', { // Replace with your backend URL
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                if (data.success && data.processed_video_url) {
+                    const videoElement = document.createElement('video');
+                    videoElement.src = data.processed_video_url; // URL of the processed video
+                    videoElement.controls = true;
+                    videoElement.style.width = "100%";
+                    videoElement.style.borderRadius = "10px";
+
+                    outputArea.innerHTML = "";
+                    outputArea.appendChild(videoElement);
+                } else {
+                    outputArea.innerHTML = "<p>Failed to process the video. Please try again.</p>";
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                outputArea.innerHTML = "<p>An error occurred while processing the video. Please check your connection or try again later.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
